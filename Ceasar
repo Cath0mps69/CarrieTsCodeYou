@@ -1,0 +1,20 @@
+alpha = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+sentence = input("What is your sentence? ")
+sentence = sentence.lower()
+encryptcnt = int(input("What is your shift number? "))
+dict = { }
+newsent = ' '
+
+for i in range(0,26):
+    abc = alpha[i]
+    let = alpha[(i+encryptcnt)%26]
+    dict[abc] = let
+
+for abc in sentence:
+    if abc in alpha:
+        abc = dict[abc] 
+        newsent = newsent + abc
+    else:
+        newsent = newsent + abc
+
+print(newsent)
